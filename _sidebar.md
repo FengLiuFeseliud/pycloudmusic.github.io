@@ -8,4 +8,7 @@
 * [User](/pycloudmusic/User.md)
 * [My](/pycloudmusic/My.md)
 * [Artist](/pycloudmusic/Artist.md)
+* [Album](/pycloudmusic/Album.md)
+* [Mv](/pycloudmusic/Mv.md)
+* [Dj / DjMusic](/pycloudmusic/Dj.md)
 * [短对象](/pycloudmusic/ShortObject.md)

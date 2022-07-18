@@ -37,7 +37,7 @@ class My(User):
 
 **`async def recommend_songs(self) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
 
-获取日推，返回一个 Music 对像生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取日推，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)， 失败时返回 Api 错误信息 (json)
 
 ### My.recommend_resource
 

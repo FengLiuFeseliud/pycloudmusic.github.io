@@ -89,7 +89,7 @@ class Music(_Music):
 
 **`async def play(self, quality = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
 
-获取播放该 music 对象指定的歌曲文件， 下载成功后返回文件路径
+获取播放该 music 对象指定的歌曲文件， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
 
 > `quality`: 音质
 >
@@ -101,7 +101,7 @@ class Music(_Music):
 
 获取下载该 music 对象指定的歌曲文件 (客户端下点击下载时候的 Api)
 
-错误码 -105需要会员， 下载成功后返回文件路径
+错误码 -105需要会员， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
 
 > `quality`: 音质
 >
