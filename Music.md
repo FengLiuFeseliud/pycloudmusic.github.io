@@ -53,9 +53,9 @@ class Music(_Music):
 
 ### Music.similar_playlist
 
-**`async def similar_playlist(self, page: int = 0, limit: int = 50) -> Union[Generator["PlayList", None, None], dict[str, Any]]:`**
+**`async def similar_playlist(self, page: int = 0, limit: int = 50) -> Union[Generator[PlayList, None, None], dict[str, Any]]:`**
 
-获取该对象的相似歌单， 获取失败时返回 Api 错误信息 (json)
+获取该对象的相似歌单， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)生成器(Generator)， 失败时返回 Api 错误信息 (json)
 
 > `page`: 页
 >
@@ -63,9 +63,9 @@ class Music(_Music):
 
 ### Music.similar_user
 
-**`async def similar_user(self, page: int = 0, limit: int = 50 ) -> Union[Generator["User", None, None], dict[str, Any]]:`**
+**`async def similar_user(self, page: int = 0, limit: int = 50 ) -> Union[Generator[User, None, None], dict[str, Any]]:`**
 
-获取最近听了这 music 对象的用户， 获取失败时返回 Api 错误信息 (json)
+获取最近听了这 music 对象的用户， 返回一个 [User 对像](/pycloudmusic/User)生成器(Generator)， 失败时返回 Api 错误信息 (json)
 
 > `page`: 页
 >
