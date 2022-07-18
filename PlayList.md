@@ -1,6 +1,6 @@
 # `class` PlayList
 
-**歌单 (PlayList) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按歌单歌曲生成的 [Music 对象](/pycloudmusic/Music)，支持使用 `.` 读取数据，并且支持 PlayList 可用的 Api， PlayList 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**歌单 (PlayList) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按歌单歌曲生成的 [Music 对象](/pycloudmusic/Music)，支持使用 `.` 读取数据，并且支持歌单相关的 Api， PlayList 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ```python
 """迭代 PlayList"""

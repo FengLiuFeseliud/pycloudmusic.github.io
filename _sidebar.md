@@ -10,5 +10,8 @@
 * [Artist](/pycloudmusic/Artist.md)
 * [Album](/pycloudmusic/Album.md)
 * [Mv](/pycloudmusic/Mv.md)
+* [Fm / FmMusic](/pycloudmusic/Fm.md)
 * [Dj / DjMusic](/pycloudmusic/Dj.md)
+* [Event / EventItem](/pycloudmusic/Event.md)
+* [Message](/pycloudmusic/Message.md)
 * [短对象](/pycloudmusic/ShortObject.md)

@@ -1,6 +1,6 @@
 # `class` Music
 
-**Music 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持 Music 可用的 Api， Music 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**Music 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持歌曲相关的 Api， Music 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ## 类实例变量
 

@@ -1,6 +1,6 @@
 # `class` Artist
 
-**Artist 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持 Artist 可用的 Api**
+**歌手 (Artist) 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持歌手相关的 Api**
 
 ## 类实例变量
 

@@ -1,9 +1,31 @@
 # `class` Dj
 
-**电台 (Dj) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按电台曲目生成的 [DjMusic 对象](/pycloudmusic/Dj?id=class-djmusic)，支持使用 `.` 读取数据，并且支持 Dj 可用的 Api， Dj 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**电台 (Dj) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按电台曲目生成的 [DjMusic 对象](/pycloudmusic/Dj?id=class-djmusic)，支持使用 `.` 读取数据，并且支持电台相关的 Api， Dj 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ```python
 """迭代 Dj"""
+from pycloudmusic import Music163Api
+import asyncio
+
+
+async def mian():
+    musicapi = Music163Api()
+    # 获取电台
+    # https://music.163.com/#/djradio?id=342290050
+    dj = await musicapi.dj(342290050)
+
+    # 计算电台页数
+    dj_music_page = int(dj.music_count / 30)
+    while dj_music_page > 0:
+        # 获取电台节目
+        await dj.read(dj_music_page, asc=True)
+        # 打印电台节目
+        for music in dj:
+            print(music.name, music.id)
+        
+        dj_music_page -= 1
+
+asyncio.run(mian())
 ```
 
 ## 类实例变量
@@ -80,7 +102,7 @@ class Dj(_Dj):
 
 # `class` DjMusic
 
-**DjMusic 支持使用 `.` 读取数据，并且支持 DjMusic 可用的 Api， DjMusic 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**电台节目 DjMusic 支持使用 `.` 读取数据，并且支持电台节目相关的 Api， DjMusic 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ## 类实例变量
 

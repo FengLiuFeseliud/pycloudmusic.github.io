@@ -1,6 +1,6 @@
 # `class` Album
 
-**专辑 (Album) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按专辑曲目生成的 [Music 对象](/pycloudmusic/Music)，支持使用 `.` 读取数据，并且支持 Album 可用的 Api， Album 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**专辑 (Album) 是一个数据列表类 (DataListObject)， 支持直接迭代对象将返回按专辑曲目生成的 [Music 对象](/pycloudmusic/Music)，支持使用 `.` 读取数据，并且专辑相关的 Api， Album 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ```python
 """迭代 Album"""

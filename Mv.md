@@ -1,6 +1,6 @@
 # `class` Mv
 
-**Mv 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持 Mv 可用的 Api， Mv 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
+**Mv 是一个数据类 (DataObject)，支持使用 `.` 读取数据，并且支持 Mv 相关的 Api， Mv 也支持[评论 (CommentObject)](/pycloudmusic/CommentObject)**
 
 ## 类实例变量
 
