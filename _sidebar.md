@@ -4,3 +4,4 @@
 * [Music163Api](/pycloudmusic/Music163Api.md)
 * [Music](/pycloudmusic/Music.md)
 * [PlayList](/pycloudmusic/PlayList.md)
+* [CommentObject](/pycloudmusic/CommentObject.md)
