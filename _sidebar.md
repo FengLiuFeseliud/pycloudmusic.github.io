@@ -7,4 +7,5 @@
 * [CommentObject](/pycloudmusic/CommentObject.md)
 * [User](/pycloudmusic/User.md)
 * [My](/pycloudmusic/My.md)
+* [Artist](/pycloudmusic/Artist.md)
 * [短对象](/pycloudmusic/ShortObject.md)
