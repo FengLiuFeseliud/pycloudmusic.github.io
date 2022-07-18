@@ -14,7 +14,7 @@
 
 **`async def music(self, ids: Union[int, str, list[Union[str, int]]]) -> Union[Music, Generator[Music, None, None], dict[str, Any]]:`**
 
-获取歌曲并实例化 music 对像， 实例化失败时返回 Api 错误信息 (json)
+获取歌曲并实例化 [music 对像](/pycloudmusic/Music)， 实例化失败时返回 Api 错误信息 (json)
 
 > `ids`: 歌曲 id，支持多 id (使用列表)，多 id 时将返回生成 music 对像的生成器 (Generator)
 
@@ -28,7 +28,7 @@
 
 ### Music163Api.playlist
 
-获取歌单并实例化 playlist 对像， 实例化失败时返回 Api 错误信息 (json)
+获取歌单并实例化 [playlist 对像](/pycloudmusic/PlayList)， 实例化失败时返回 Api 错误信息 (json)
 
 **`async def playlist(self, id_: Union[int, str]) -> Union[PlayList, dict[str, Any]]:`**
 
