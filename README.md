@@ -35,6 +35,10 @@ async def main():
 asyncio.run(main())
 ```
 
+此处数据为打印歌单对象
+
+![printobj.png](https://img.sakuratools.top/docs/pycloudmusic/printobj.png@0x0x0.8x80)
+
 ## 可迭代对象
 
 pycloudmusic 下的部分对象可以被迭代使用
@@ -122,9 +126,12 @@ async def main():
     # 获取歌曲
     # https://music.163.com/song?id=1486983140&userid=492346933
     music = await musicapi.music(1486983140)
-    # 支持评论的对象都继承了 Music163Commen
+    # 支持评论的对象都继承了 CommentObject
+
     # 按时间获取评论
-    print(await music.comment(hot=False))
+    count, comments = await music.comments(hot=False)
+    for comment in comments:
+        print(comment)
 
 asyncio.run(main())
 ```
