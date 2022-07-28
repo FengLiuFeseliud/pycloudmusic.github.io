@@ -114,24 +114,56 @@ asyncio.run(main())
 
 pycloudmusic 支持网易云的所有评论， 对支持评论的对象使用 Music163Comment 的方法即可
 
-```python
-"""获取歌曲评论"""
+使用 [Page](/pycloudmusic/Tools?id=class-page)
 
-from pycloudmusic import Music163Api
+```python
+"""获取歌曲所有评论"""
+
+from pycloudmusic import Music163Api, Page
 import asyncio
 
 
 async def main():
     musicapi = Music163Api()
     # 获取歌曲
-    # https://music.163.com/song?id=1486983140&userid=492346933
-    music = await musicapi.music(1486983140)
-    # 支持评论的对象都继承了 CommentObject
-
+    # https://music.163.com/song?id=1902224491&userid=492346933
+    music = await musicapi.music(1902224491)
     # 按时间获取评论
+    async for comments in Page(music.comments, hot=False):
+        for comment in comments:
+            print(f"{comment.user_str}:  {comment.content}")
+
+asyncio.run(main())
+```
+
+自定义迭代
+
+
+```python
+"""获取歌曲所有评论"""
+
+import math
+from pycloudmusic import Music163Api
+import asyncio
+
+
+async def main():
+    musicapi = Music163Api()
+    
+    # https://music.163.com/song?id=1899317143
+    music = await musicapi.music(1899317143)
+
     count, comments = await music.comments(hot=False)
-    for comment in comments:
-        print(comment)
+    page = math.ceil(count / 20)
+
+    all_count = 0
+    while page > -1:
+        count, comments = await music.comments(hot=False, page=page)
+
+        for comment in comments:
+            print(comment)
+
+        page -= 1
 
 asyncio.run(main())
 ```

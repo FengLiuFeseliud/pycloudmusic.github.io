@@ -173,3 +173,76 @@ class ShortMv(_Mv):
         # mv封面
         self.cover = mv_data["coverUrl"]
 ```
+
+## `class` PersonalizedMusic
+
+推荐歌曲，支持所有歌曲相关 Api
+
+### 类实例变量
+
+```python
+class PersonalizedMusic(_Music):
+
+    def __init__(
+        self, 
+        headers: Optional[dict[str, str]], 
+        music_data: dict[str, Any]
+    ) -> None:
+        super().__init__(headers, music_data)
+        # 资源类型
+        self.data_type = DATA_TYPE[0]
+        # 歌曲id
+        self.id = music_data['id']
+        # 标题列表 [大标题, 副标题]
+        self.name = [music_data["name"], " ".join(music_data["alias"])]
+        self.name_str = f"{self.name[0]} {self.name[1]}"
+        # 作者列表 [作者, 作者, ...]
+        self.artist = [{"id": artist["id"], "name": artist["name"]} for artist in music_data['artists']]
+        self.artist_str = "/".join([author["name"] for author in self.artist])
+        # 专辑列表
+        self.album_data = music_data["album"]
+        self.album_str = music_data["album"]["name"]
+        # 所有音质
+        self.quality = {
+            "b": music_data["bMusic"],
+            "h": music_data["hMusic"],
+            "m": music_data["mMusic"],
+            "l": music_data["lMusic"],
+            "sq": music_data.get("sqMusic"),
+            "hr": music_data.get("hrMusic"),
+        }
+        # mv id
+        self.mv_id = music_data["mvid"]
+        # 发表时间
+        self.album_data["publishTime"]
+```
+
+## `class` PersonalizedDj
+
+推荐电台，支持所有电台相关 Api
+
+### 类实例变量
+
+```python
+class PersonalizedDj(_Dj):
+
+    def __init__(
+        self, 
+        headers: Optional[dict[str, str]], 
+        dj_data: dict[str, Any]
+    ) -> None:
+        super().__init__(headers, dj_data)
+        # 电台id
+        self.id = dj_data["id"]
+        # 电台标题
+        self.name = dj_data["name"]
+        # 电台封面
+        self.cover = dj_data['coverUrl']
+        # 电台创建者
+        self.user = dj_data['dj']
+        self.user_str = self.user["nickname"]
+        # 电台标签
+        self.tags = dj_data["channels"]
+        # 电台描述
+        self.description = dj_data["description"]
+```

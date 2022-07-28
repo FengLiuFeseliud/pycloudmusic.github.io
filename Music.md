@@ -87,23 +87,23 @@ class Music(_Music):
 
 ### Music.play
 
-**`async def play(self, quality = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
+**`async def play(self, br = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
 
 获取播放该 music 对象指定的歌曲文件， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
 
-> `quality`: 音质
+> `br`: 音质
 >
 > `download_path`: 下载路径
 
 ### Music.download
 
-**`async def download(self, quality = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
+**`async def download(self, br = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
 
 获取下载该 music 对象指定的歌曲文件 (客户端下点击下载时候的 Api)
 
 错误码 -105需要会员， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
 
-> `quality`: 音质
+> `br`: 音质
 >
 > `download_path`: 下载路径
 
@@ -115,16 +115,16 @@ class Music(_Music):
 
 ### Music._play_url
 
-**`async def _play_url(self, quality = None) -> dict[str, Any]:`**
+**`async def _play_url(self, br = None) -> dict[str, Any]:`**
 
 获取播放该 music 对象指定的歌曲文件 url
 
-> `quality`: 音质
+> `br`: 音质
 
 ### Music._download_url
 
-**`async def _download_url(self, quality = None) -> dict[str, Any]:`**
+**`async def _download_url(self, br = None) -> dict[str, Any]:`**
 
 获取该 music 对象指定的歌曲 url, 错误码 -105 需要会员
 
-> `quality`: 音质
+> `br`: 音质
