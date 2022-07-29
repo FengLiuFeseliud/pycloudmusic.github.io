@@ -1,7 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 * [快速开始](/pycloudmusic/README)
-* [Music163Api](/pycloudmusic/Music163Api.md)
+* [基础 Api](/pycloudmusic/Music163Api.md)
+* [模拟登录](/pycloudmusic/LoginMusic163.md)
 * [Music](/pycloudmusic/Music.md)
 * [PlayList](/pycloudmusic/PlayList.md)
 * [CommentObject](/pycloudmusic/CommentObject.md)

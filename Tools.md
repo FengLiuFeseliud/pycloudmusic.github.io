@@ -40,8 +40,32 @@ asyncio.run(main())
 
 ### 类实例方法
 
+### Page.all
+
 **`async def all(self, call_fun: Optional[Callable[[dict], int]] = None)`**
 
 获取对象绑定 Api 的所有数据
 
 > `call_fun`: 设置最大页数回调，接受 api 数据，返回最大页数 (int)
+
+#### Demo
+
+Page.all 与直接遍历对象的不同是，Page.all会一次性请求所有数据，而直接遍历对象是循环一次请求一次，按需请求
+
+```python
+from pycloudmusic import Music163Api, Page
+import asyncio
+
+
+async def main():
+    musicapi = Music163Api()
+    # https://music.163.com/song?id=1902224491&userid=492346933
+    music = await musicapi.music(1902224491)
+    # 一次性请求所有数据
+    for count, comments in await Page(music.comments, hot=False).all():
+        # 遍历一页的数据
+        for comment in comments:
+            print(f"{comment.user_str}:  {comment.content}")
+
+asyncio.run(main())
+```
