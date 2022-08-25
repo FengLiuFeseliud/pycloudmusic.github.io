@@ -35,21 +35,21 @@ class My(User):
 
 ### My.recommend_songs
 
-**`async def recommend_songs(self) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
+**`async def recommend_songs(self) -> Generator[Music, None, None]:`**
 
-获取日推，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取日推，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)
 
 ### My.recommend_resource
 
-**`async def recommend_resource(self) -> Union[Generator[ShortPlayList, None, None], dict[str, Any]]:`**
+**`async def recommend_resource(self) -> Generator[ShortPlayList, None, None]:`**
 
-获取每日推荐歌单，返回一个 [ShortPlayList 对像](/pycloudmusic/ShortObject?id=class-shortplaylist)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取每日推荐歌单，返回一个 [ShortPlayList 对像](/pycloudmusic/ShortObject?id=class-shortplaylist)生成器(Generator)
 
 ### My.playmode_intelligence
 
-**`async def playmode_intelligence(self, music_id: Union[str, int], sid: Optional[Union[str, int]] = None, playlist_id: Optional[Union[str, int]] = None) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
+**`async def playmode_intelligence(self, music_id: Union[str, int], sid: Optional[Union[str, int]] = None, playlist_id: Optional[Union[str, int]] = None) -> Generator[Music, None, None]:`**
 
-心动模式/智能播放 歌单，返回一个 Music 对像生成器(Generator)， 失败时返回 Api 错误信息 (json)
+心动模式/智能播放 歌单，返回一个 Music 对像生成器(Generator)
 
 > `music_id`: 歌曲 id
 >
@@ -59,9 +59,9 @@ class My(User):
 
 ### My.sublist_artist
 
-**`async def sublist_artist(self, page: int = 0, limit: int = 25) -> Union[tuple[int, Generator[ShortArtist, None, None]], dict[str, Any]]:`**
+**`async def sublist_artist(self, page: int = 0, limit: int = 25) -> tuple[int, Generator[ShortArtist, None, None]]:`**
 
-查看 cookie 用户收藏的歌手，返回一个元组 (tuple) 包含所有的歌手收藏数，一个 [ShortArtist 对像](/pycloudmusic/ShortObject?id=class-shortartist)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+查看 cookie 用户收藏的歌手，返回一个元组 (tuple) 包含所有的歌手收藏数，一个 [ShortArtist 对像](/pycloudmusic/ShortObject?id=class-shortartist)生成器(Generator)
 
 > `page`: 页
 >
@@ -69,9 +69,9 @@ class My(User):
 
 ### My.sublist_album
 
-**`async def sublist_album(self, page: int = 0, limit: int = 25) -> Union[tuple[int, Generator[ShortAlbum, None, None]], dict[str, Any]]:`**
+**`async def sublist_album(self, page: int = 0, limit: int = 25) -> tuple[int, Generator[ShortAlbum, None, None]]:`**
 
-查看 cookie 用户收藏的专辑，返回一个元组 (tuple) 包含所有的专辑收藏数，一个 [ShortAlbum 对像](/pycloudmusic/ShortObject?id=class-shortalbum)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+查看 cookie 用户收藏的专辑，返回一个元组 (tuple) 包含所有的专辑收藏数，一个 [ShortAlbum 对像](/pycloudmusic/ShortObject?id=class-shortalbum)生成器(Generator)
 
 > `page`: 页
 >
@@ -79,9 +79,9 @@ class My(User):
 
 ### My.sublist_dj
 
-**`async def sublist_dj(self, page: int = 0, limit: int = 25) -> Union[tuple[int, Generator[ShortDj, None, None]], dict[str, Any]]:`**
+**`async def sublist_dj(self, page: int = 0, limit: int = 25) -> tuple[int, Generator[ShortDj, None, None]]:`**
 
-查看 cookie 用户收藏的电台，返回一个元组 (tuple) 包含所有的电台收藏数，一个 [ShortDj 对像](/pycloudmusic/ShortObject?id=class-shortdj)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+查看 cookie 用户收藏的电台，返回一个元组 (tuple) 包含所有的电台收藏数，一个 [ShortDj 对像](/pycloudmusic/ShortObject?id=class-shortdj)生成器(Generator)
 
 > `page`: 页
 >
@@ -89,9 +89,9 @@ class My(User):
 
 ### My.sublist_mv
 
-**`async def sublist_mv(self, page: int = 0, limit: int = 25) -> Union[tuple[int, Generator[ShortMv, None, None]], dict[str, Any]]:`**
+**`async def sublist_mv(self, page: int = 0, limit: int = 25) -> tuple[int, Generator[ShortMv, None, None]]:`**
 
-查看 cookie 用户收藏的 MV，返回一个元组 (tuple) 包含所有的 MV 收藏数，一个 [ShortMv 对像](/pycloudmusic/ShortObject?id=class-shortmv)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+查看 cookie 用户收藏的 MV，返回一个元组 (tuple) 包含所有的 MV 收藏数，一个 [ShortMv 对像](/pycloudmusic/ShortObject?id=class-shortmv)生成器(Generator)
 
 > `page`: 页
 >
@@ -127,7 +127,7 @@ class My(User):
 
 ### My.cloud
 
-**`async def cloud(self, page: int = 0, limit: int = 30) -> Union[Cloud, dict[str, Any]]:`**
+**`async def cloud(self, page: int = 0, limit: int = 30) -> Cloud:`**
 
 获取云盘数据并实例化一个 cloud 对象返回， 实例化失败时返回 Api 错误信息 (json)
 

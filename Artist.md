@@ -36,9 +36,9 @@ class Artist(_Artist):
 
 ### Artist.song
 
-**`async def song(self, hot: bool = True, page: int = 0, limit: int = 100) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
+**`async def song(self, hot: bool = True, page: int = 0, limit: int = 100) -> Generator[Music, None, None]:`**
 
-获取该对像歌曲，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对像歌曲，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)
 
 > `hot`: True 按热度排序 / False 按时间排序
 >
@@ -48,15 +48,15 @@ class Artist(_Artist):
 
 ### Artist.song_top
 
-**`async def song_top(self) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
+**`async def song_top(self) -> Generator[Music, None, None]`**
 
-获取该对像热门50首，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对像热门50首，返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)
 
 ### Artist.album
 
-**`async def album(self, page: int = 0, limit: int = 30) -> Union[Generator[Album, None, None], dict[str, Any]]:`**
+**`async def album(self, page: int = 0, limit: int = 30) -> Generator[Album, None, None]:`**
 
-获取该对像专辑，返回一个 [Album 对像](/pycloudmusic/Album)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对像专辑，返回一个 [Album 对像](/pycloudmusic/Album)生成器(Generator)
 
 > `page`: 页
 >

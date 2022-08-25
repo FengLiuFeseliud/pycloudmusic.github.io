@@ -55,9 +55,9 @@ class Mv(_Mv):
 
 ### Mv.play
 
-**`async def play(self, download_path: Optional[str] = None, quality: Union[str, int] = 1080) -> Union[str, dict[str, Any]]:`**
+**`async def play(self, download_path: Optional[str] = None, quality: Union[str, int] = 1080) -> str:`**
 
-获取播放该 mv 对象指定的视频文件， 失败时返回 Api 错误信息 (json)
+获取播放该 mv 对象指定的视频文件
 
 > `download_path`: 下载路径
 >

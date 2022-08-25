@@ -49,13 +49,13 @@ class Music(_Music):
 
 **`async def similar(self) -> dict[str, Any]:`**
 
-获取该对象的相似， 获取失败时返回 Api 错误信息 (json)
+获取该对象的相似
 
 ### Music.similar_playlist
 
-**`async def similar_playlist(self, page: int = 0, limit: int = 50) -> Union[Generator[PlayList, None, None], dict[str, Any]]:`**
+**`async def similar_playlist(self, page: int = 0, limit: int = 50) -> Generator[PlayList, None, None]:`**
 
-获取该对象的相似歌单， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对象的相似歌单， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)生成器(Generator)
 
 > `page`: 页
 >
@@ -63,9 +63,9 @@ class Music(_Music):
 
 ### Music.similar_user
 
-**`async def similar_user(self, page: int = 0, limit: int = 50 ) -> Union[Generator[User, None, None], dict[str, Any]]:`**
+**`async def similar_user(self, page: int = 0, limit: int = 50 ) -> Generator[User, None, None]:`**
 
-获取最近听了这 music 对象的用户， 返回一个 [User 对像](/pycloudmusic/User)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取最近听了这 music 对象的用户， 返回一个 [User 对像](/pycloudmusic/User)生成器(Generator)
 
 > `page`: 页
 >
@@ -87,9 +87,9 @@ class Music(_Music):
 
 ### Music.play
 
-**`async def play(self, br = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
+**`async def play(self, br = None, download_path: str = None) -> str:`**
 
-获取播放该 music 对象指定的歌曲文件， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
+获取播放该 music 对象指定的歌曲文件， 下载成功后返回文件路径
 
 > `br`: 音质
 >
@@ -97,11 +97,11 @@ class Music(_Music):
 
 ### Music.download
 
-**`async def download(self, br = None, download_path: str = None) -> Union[str, dict[str, Any]]:`**
+**`async def download(self, br = None, download_path: str = None) -> str:`**
 
 获取下载该 music 对象指定的歌曲文件 (客户端下点击下载时候的 Api)
 
-错误码 -105需要会员， 下载成功后返回文件路径， 失败时返回 Api 错误信息 (json)
+错误码 -105 需要会员， 下载成功后返回文件路径
 
 > `br`: 音质
 >
@@ -109,9 +109,9 @@ class Music(_Music):
 
 ### Music.mv
 
-**`async def mv(self) -> Union["Mv", dict[str, Any]]:`**
+**`async def mv(self) -> "Mv":`**
 
-获取该对像 mv 实例化 mv 对像并返回 mv 对像， 获取失败时返回 Api 错误信息 (json)
+获取该对像 mv 实例化 mv 对像并返回 mv 对像
 
 ### Music._play_url
 

@@ -35,9 +35,9 @@ class User(Api):
 
 ### Uesr.playlist
 
-**`async def playlist(self, page: int = 0, limit: int = 30) -> Union[Generator[PlayList, None, None], dict[str, Any]]:`**
+**`async def playlist(self, page: int = 0, limit: int = 30) -> Generator[PlayList, None, None]:`**
 
-获取该对象的歌单， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对象的歌单， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)生成器(Generator)
 
 > `page`: 页
 >
@@ -45,15 +45,15 @@ class User(Api):
 
 ### Uesr.like_music
 
-**`async def like_music(self) -> Union[PlayList, dict[str, Any]]:`**
+**`async def like_music(self) -> PlayList:`**
 
-获取该对象喜欢的歌曲， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)， 失败时返回 Api 错误信息 (json)
+获取该对象喜欢的歌曲， 返回一个 [PlayList 对像](/pycloudmusic/PlayList)
 
 ### Uesr.record
 
-**`async def record(self, type_: bool = True) -> Union[Generator[Music, None, None], dict[str, Any]]:`**
+**`async def record(self, type_: bool = True) -> Generator[Music, None, None]:`**
 
-获取该对象听歌榜单， 返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+获取该对象听歌榜单， 返回一个 [Music 对像](/pycloudmusic/Music)生成器(Generator)
 
 > `type_`: True 所有时间 / False 最近一周
 

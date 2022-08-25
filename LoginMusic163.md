@@ -6,9 +6,9 @@
 
 ### LoginMusic163.email
 
-邮箱登录，登录成功返回一个元组 (tuple) 包括 (状态码, Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
+邮箱登录，登录成功返回一个元组 (tuple) 包括 (Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
 
-**`async def email(self, email: str, password: str) -> tuple[int, str, Music163Api]:`**
+**`async def email(self, email: str, password: str) -> tuple[str, Music163Api]:`**
 
 > `email`: 邮箱
 >
@@ -45,9 +45,9 @@ asyncio.run(main())
 
 ### LoginMusic163.captcha
 
-手机/手机验证码 登录，登录成功返回一个元组 (tuple) 包括 (状态码, Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
+手机/手机验证码 登录，登录成功返回一个元组 (tuple) 包括 (Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
 
-**`async def cellphone(self, phone: Union[str, int], password: Union[str, int], captcha: bool = False, country_code: Union[str, int] = "86") -> tuple[int, str, Music163Api]:`**
+**`async def cellphone(self, phone: Union[str, int], password: Union[str, int], captcha: bool = False, country_code: Union[str, int] = "86") -> tuple[str, Music163Api]:`**
 
 > `phone`: 手机号
 >
@@ -87,7 +87,7 @@ asyncio.run(main())
 
 ### LoginMusic163.qr_key
 
-获取二维码 key，用于二维码登录与生成登录二维码，成功返回一个元组 (tuple) 包括 (二维码 key, 登录二维码 url (用于生成登录二维码))，失败时返回 Api 错误信息 (json)
+获取二维码 key，用于二维码登录与生成登录二维码，成功返回一个元组 (tuple) 包括 (二维码 key, 登录二维码 url (用于生成登录二维码))
 
 **`async def qr_key(self) -> Union[tuple[str, str], dict[str, Any]]:`**
 
@@ -103,9 +103,9 @@ asyncio.run(main())
 
 ### LoginMusic163.qr
 
-二维码登录，使用后将堵塞线程直到登录成功或二维码过期或登录失败，登录成功返回一个元组 (tuple) 包括 (状态码, Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
+二维码登录，使用后将堵塞线程直到登录成功或二维码过期或登录失败，登录成功返回一个元组 (tuple) 包括 (Cookie, 一个使用本次登录 Cookie 的[ Music163Api 对象](/pycloudmusic/Music163Api.md))
 
-**`async def qr(self, qr_key: str, time_sleep: int = 3) -> tuple[int, str, Music163Api]:`**
+**`async def qr(self, qr_key: str, time_sleep: int = 3) -> tuple[str, Music163Api]:`**
 
 > `qr_key`: 二维码 key 使用 [LoginMusic163.qr_key](/pycloudmusic/LoginMusic163?id=loginmusic163qr_key) 获得二维码 key
 >

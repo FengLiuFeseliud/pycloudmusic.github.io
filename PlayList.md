@@ -70,9 +70,9 @@ class PlayList(_PlayList):
 
 ### PlayList.subscribers
 
-**`async def subscribers(self, page: int=0, limit: int=20) -> Union[Generator[User, None, None], dict[str, Any]]:`**
+**`async def subscribers(self, page: int=0, limit: int=20) -> Generator[User, None, None]:`**
 
-查看歌单收藏者， 返回一个 [User 对像](/pycloudmusic/User)生成器(Generator)， 失败时返回 Api 错误信息 (json)
+查看歌单收藏者， 返回一个 [User 对像](/pycloudmusic/User)生成器(Generator)
 
 > `page`: 页
 >
