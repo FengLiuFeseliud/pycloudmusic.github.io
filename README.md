@@ -1,3 +1,5 @@
+#  已移动至 pycloudmusic 仓库下 docs 部署于 github pages https://fengliufeseliud.github.io/pycloudmusic/
+
 ## 介绍
 
 pycloudmusic 是异步高性能的 Python 音乐 API 库
